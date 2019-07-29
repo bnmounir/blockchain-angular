@@ -1,0 +1,19 @@
+<div class="blockchain-body">
+  <div class="container blocks-container">
+    <h1>Blocks on chain</h1>
+    <p>Each block click to check the individual block</p>
+    <app-block-view
+      class="block-view"
+      *ngFor="let block of blocks"
+      [block]="block"
+      (click)="showData(block)"
+    >
+    </app-block-view>
+  </div>
+  <br />
+  <br />
+  <div class="container">
+    <h1>Data Table</h1>
+    <app-data-table [metadata]="selectedBlock.data"> </app-data-table>
+  </div>
+</div>

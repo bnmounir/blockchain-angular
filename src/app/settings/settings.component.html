@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Settings</h1>
+
+  <br />
+  <div class="form-group">
+    <label for="difficulty">Difficulty</label>
+    <input
+      id="difficulty"
+      type="number"
+      class="form-control"
+      [(ngModel)]="blockchain.difficulty"
+    />
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="mining-reward">Mining Reward</label>
+    <input
+      type="number"
+      id="mining-reward"
+      class="form-control"
+      [(ngModel)]="blockchain.miningReward"
+    />
+  </div>
+</div>
