@@ -7,11 +7,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BlockViewComponent implements OnInit {
   @Input() public block;
+  public isClicked: boolean = false;
 
   constructor() {
     setTimeout(() => {
-      console.log('from Block view component => ', this.block);
+      console.log('from block-view component => ', this.block);
     }, 2000);
+  }
+
+  handleClick() {
+    this.isClicked = !this.isClicked;
   }
 
   ngOnInit() {}
