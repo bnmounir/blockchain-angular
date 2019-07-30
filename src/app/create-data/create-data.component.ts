@@ -26,7 +26,11 @@ export class CreateDataComponent implements OnInit {
     this.newDt.signData(this.walletKey.keyObj);
     this.blockchainService.addData(this.newDt);
     this.newDt = this.dataService.dataInstance;
-    console.log('from create data component: New data ===> ', this.newDt);
-    console.log('from create data component: Wallet key ===> ', this.walletKey);
+    console.log('create-data component: New data ===> ', this.newDt);
+    console.log(
+      'create-data component: Validation ===> ',
+      this.newDt.isValid()
+    );
+    console.log('create-data component: Wallet key ===> ', this.walletKey);
   }
 }

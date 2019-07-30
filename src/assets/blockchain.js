@@ -19,6 +19,7 @@ class Data {
     const hashDATA = this.calculateHash();
     const sig = signingKey.sign(hashDATA, 'base64');
     this.signature = sig.toDER('hex');
+    console.log('this is the signature ..................... ', sig);
   }
 
   isValid() {
