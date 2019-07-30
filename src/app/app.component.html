@@ -1,18 +1,31 @@
-<nav class="navbar navbar-light" style="background-color: #afdcfc;">
-  <a routerLink="/" class="btn btn-outline-dark">Blockchain Project</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a routerLink="/" class="navbar-brand">Blockchain Project</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <div>
-    <button class="btn btn-outline-dark" routerLink="/settings">
-      Settings
-    </button>
-    &nbsp;
-    <button class="btn btn-outline-dark" routerLink="/create-new">
-      New Data
-    </button>
-    &nbsp;
-    <button class="btn btn-outline-dark" routerLink="/pending">
-      Pending...
-    </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" routerLink="/settings">
+        Settings
+      </a>
+
+      <a class="nav-item nav-link" routerLink="/create-new">
+        New Data
+      </a>
+
+      <a class="nav-item nav-link" routerLink="/pending">
+        Pending...
+      </a>
+    </div>
   </div>
 </nav>
 

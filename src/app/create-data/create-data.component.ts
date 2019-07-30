@@ -32,5 +32,6 @@ export class CreateDataComponent implements OnInit {
       this.newDt.isValid()
     );
     console.log('create-data component: Wallet key ===> ', this.walletKey);
+    this.newDt = this.dataService.dataInstance;
   }
 }

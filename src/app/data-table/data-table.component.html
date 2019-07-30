@@ -1,43 +1,47 @@
-<p *ngIf="metadata.length === 0">there is no Metadata!</p>
+<div class="data-table-container">
+  <p *ngIf="metadata.length === 0">the Block selected does not contain data!</p>
 
-<table class="table table-hover table-striped" *ngIf="metadata.length > 0">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">From</th>
-      <th scope="col">To</th>
-      <th scope="col">Amount</th>
-      <th scope="col">Timestamp</th>
-      <th scope="col">Valid?</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let tx of metadata; index as index">
-      <td>{{ index }}</td>
-      <td class="text-truncate" style="max-width: 100px;">
-        {{ tx.fromAddress }}
+  <table class="table table-hover table-striped" *ngIf="metadata.length > 0">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">From</th>
+        <th scope="col">To</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Timestamp</th>
+        <th scope="col">Valid?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tx of metadata; index as index">
+        <td>{{ index }}</td>
+        <td class="text-truncate" style="max-width: 100px;">
+          {{ tx.fromAddress }}
 
-        <span *ngIf="tx.fromAddress === null">System</span>
-      </td>
-      <td class="text-truncate" style="max-width: 100px;">
-        {{ tx.toAddress }}
-      </td>
-      <td>
-        {{ tx.amount }}
-        <span *ngIf="tx.fromAddress === null" class="text-muted"
-          ><br /><small>(Block reward)</small></span
-        >
-      </td>
-      <td>
-        {{ tx.timestamp }}<br />
-        <span class="text-muted"
-          ><small>{{ tx.timestamp | date: 'MMM d, y, h:mm:ss a' }}</small></span
-        >
-      </td>
-      <td style="max-width: 40px;">
-        <span *ngIf="tx.isValid()">✓</span>
-        <span *ngIf="!tx.isValid()">✗</span>
-      </td>
-    </tr>
-  </tbody>
-</table>
+          <span *ngIf="tx.fromAddress === null">System</span>
+        </td>
+        <td class="text-truncate" style="max-width: 100px;">
+          {{ tx.toAddress }}
+        </td>
+        <td>
+          {{ tx.amount }}
+          <span *ngIf="tx.fromAddress === null" class="text-muted"
+            ><br /><small>(Block reward)</small></span
+          >
+        </td>
+        <td>
+          {{ tx.timestamp }}<br />
+          <span class="text-muted"
+            ><small>{{
+              tx.timestamp | date: 'MMM d, y, h:mm:ss a'
+            }}</small></span
+          >
+        </td>
+        <td style="max-width: 40px;">
+          <span *ngIf="tx.isValid()">✓</span>
+          <span *ngIf="!tx.isValid()">✗</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
