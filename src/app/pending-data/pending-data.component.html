@@ -2,7 +2,12 @@
   <h1>Pending Data</h1>
   <app-data-table [metadata]="pendingData"></app-data-table>
 
-  <button class="btn btn-primary" (click)="minePendingData()" routerLink="/">
+  <button
+    class="btn btn-outline-dark"
+    (click)="minePendingData()"
+    routerLink="/"
+    *ngIf="pendingData.length > 0"
+  >
     Start Mining
   </button>
 </div>
